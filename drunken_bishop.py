@@ -1,6 +1,10 @@
 # coding: utf-8
-import itertools
 from collections import Counter
+
+from bits import hex_byte_to_binary, bit_pairs
+from direction import NW, NE, SW, SE
+
+
 
 """
 The bishop wakes up in the center of a room. He is drunk and stumbles around,
@@ -21,46 +25,6 @@ ROOM_DIMENSIONS = (17, 9)
 COIN_VALUE_STARTING_POSITION = 15
 COIN_VALUE_ENDING_POSITION = 16
 
-
-def hex_byte_to_binary(hex_byte):
-    """
-    Convert a hex byte (such as d4) into a string representation of its bits,
-    e.g. d4 =>
-    """
-    assert len(hex_byte) == 2
-    dec = int(hex_byte, 16)
-    return bin(dec)[2:].zfill(8)
-
-
-def bit_pairs(binary):
-    """
-    Convert a word into bit pairs little-endian style.
-    '10100011' => ['11', '00', '10', '10']
-    """
-    def take(n, iterable):
-        "Return first n items of the iterable as a list"
-        return list(itertools.islice(iterable, n))
-    def all_pairs(iterable):
-        while True:
-            pair = take(2, iterable)
-            if not pair:
-                break
-            yield ''.join(pair)
-    pairs = list(all_pairs(iter(binary)))
-    return list(reversed(pairs))
-
-
-class Direction(object):
-    """Encode a sense of direction."""
-    def __init__(self, dx, dy):
-        self.dx = dx
-        self.dy = dy
-
-
-NW = Direction(dx=-1, dy=-1)
-NE = Direction(dx=1, dy=-1)
-SW = Direction(dx=-1, dy=1)
-SE = Direction(dx=1, dy=1)
 
 
 def directions_from_fingerprint(fingerprint):
