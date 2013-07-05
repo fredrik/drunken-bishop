@@ -1,0 +1,8 @@
+The Drunken Bishop.
+
+Python implementation of the visual fingerprinting technique used in OpenSSH.
+
+
+Read more:
+http://www.dirk-loss.de/sshvis/drunken_bishop.pdf
+http://pthree.org/2013/05/30/openssh-keys-and-the-drunken-bishop/
