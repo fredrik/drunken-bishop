@@ -2,6 +2,22 @@ The Drunken Bishop.
 
 Python implementation of the visual fingerprinting technique used in OpenSSH.
 
+Usage:
+
+$> python drunken_bishop.py 37:e4:6a:2d:48:38:1a:0a:f3:72:6d:d9:17:6b:bd:5e
+
++-----------------+
+|                 |
+|                 |
+|          .      |
+|     .   o       |
+|o . o . S +      |
+|.+ + = . B .     |
+|o + + o B o E    |
+| o .   + . o     |
+|         .o      |
++-----------------+
+
 
 Read more:
 http://www.dirk-loss.de/sshvis/drunken_bishop.pdf

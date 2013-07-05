@@ -114,3 +114,14 @@ def display_room(room):
 def drunken_bishop(fingerprint):
     room = stumble_around(fingerprint)
     return display_room(room)
+
+
+
+if __name__ == '__main__':
+    import sys
+    if not len(sys.argv) == 2:
+        print 'usage: {} <fingerprint>'.format(sys.argv[0])
+        sys.exit(1)
+    fingerprint = sys.argv[1]
+    assert len(fingerprint) == 47, "a fingerprint looks liks this: 37:e4:6a:2d:48:38:1a:0a:f3:72:6d:d9:17:6b:bd:5e"
+    print drunken_bishop(fingerprint)
